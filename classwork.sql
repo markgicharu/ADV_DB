@@ -39,3 +39,12 @@ SELECT idno, firstname, lastname, constituencycode
 	where not exists (Select constituencycode
 					from constituency
 					where voter.constituencycode = constituency.constituencycode)
+					
+/*select from existing bahati constituency the person*/
+					
+SELECT idno, firstname, lastname, constituencycode
+ FROM voter
+	where  exists (Select constituencycode
+					from constituency
+					where voter.constituencycode = constituency.constituencycode
+					AND constituencyname = 'Bahati')
