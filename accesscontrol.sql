@@ -22,6 +22,12 @@ to ANU
 
 USE iebc3;
 
+/*revokes all privileges for user ANU*/
 revoke all privileges
+on county
+from ANU
+
+/*revokes select privileges for user ANU*/
+revoke select privileges
 on county
 from ANU
