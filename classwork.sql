@@ -24,3 +24,18 @@ WHERE NOT EXISTS (SELECT constituencycode
 /*insert into table values*/	
 INSERT INTO VOTER (idno, firstname, lastname )
 values ('2115031','Michael', 'Angelo' )
+
+
+/*check exist new inserted value person */
+SELECT idno, firstname, lastname, constituencycode
+ FROM voter
+	where  exists (Select constituencycode
+					from constituency
+					where voter.constituencycode = constituency.constituencycode)
+					
+/*not exist new inserted value person */
+SELECT idno, firstname, lastname, constituencycode
+ FROM voter
+	where not exists (Select constituencycode
+					from constituency
+					where voter.constituencycode = constituency.constituencycode)
