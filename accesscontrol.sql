@@ -16,3 +16,12 @@ USE iebc3
 grant select
 on county 
 to ANU 
+
+
+/*revoke Privileges*/
+
+USE iebc3;
+
+revoke all privileges
+on county
+from ANU
