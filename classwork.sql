@@ -20,3 +20,7 @@ WHERE EXISTS (SELECT constituencycode
 select constituencycode from voter 
 WHERE NOT EXISTS (SELECT constituencycode
 					FROM constituency)
+
+/*insert into table values*/	
+INSERT INTO VOTER (idno, firstname, lastname )
+values ('2115031','Michael', 'Angelo' )
