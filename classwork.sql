@@ -48,3 +48,16 @@ SELECT idno, firstname, lastname, constituencycode
 					from constituency
 					where voter.constituencycode = constituency.constituencycode
 					AND constituencyname = 'Bahati')
+					
+/*unions*/
+
+use iebc3
+
+select countycode from county 
+union select countycode from constituency
+
+/*intersect*/
+select countycode from county 
+intersect select countycode from constituency
+
+
