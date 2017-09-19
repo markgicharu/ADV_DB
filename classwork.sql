@@ -60,4 +60,8 @@ union select countycode from constituency
 select countycode from county 
 intersect select countycode from constituency
 
+/*unions all*/
+select countycode from county 
+union all select countycode from constituency
+
 
